@@ -221,6 +221,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppFlowMetadata.cs" />
     <Compile Include="Controllers\AuthCallbackController.cs" />
+    <Compile Include="Controllers\Gantt\Common.cs" />
     <Compile Include="Controllers\Gantt\Gantt1Controller.cs" />
     <Compile Include="Controllers\Gantt\GanttController.cs" />
     <Compile Include="Controllers\Gantt\GanttDependenciesController.cs" />
