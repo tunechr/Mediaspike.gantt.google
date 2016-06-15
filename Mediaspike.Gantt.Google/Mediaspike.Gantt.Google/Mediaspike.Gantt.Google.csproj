@@ -225,6 +225,7 @@
     <Compile Include="Controllers\Gantt\Gantt1Controller.cs" />
     <Compile Include="Controllers\Gantt\GanttController.cs" />
     <Compile Include="Controllers\Gantt\GanttDependenciesController.cs" />
+    <Compile Include="Controllers\Gantt\GoogleSheetsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Gantt\GanttController.cs" />
@@ -307,6 +308,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Gantt\NewFolder1\" />
     <Folder Include="Views\Gantt1\" />
+    <Folder Include="Views\GoogleSheets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

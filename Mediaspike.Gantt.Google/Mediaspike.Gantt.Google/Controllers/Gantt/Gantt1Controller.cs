@@ -146,7 +146,14 @@ namespace Mediaspike.Gantt.Google.Controllers.Gantt
 
                     });
                     VRx.Values = xx;
-                    SpreadsheetsResource.ValuesResource.UpdateRequest update = service.Spreadsheets.Values.Update(VRx, spreadsheetId, "Sheet1!B2:I2");
+
+                    //Determine the row we want to update
+                    //this needs to be fixed and a query used to ind the row
+                    int row = (tasks.First().ID)+1;
+                    string srow = row.ToString();
+
+                    SpreadsheetsResource.ValuesResource.UpdateRequest update = service.Spreadsheets.Values.Update(VRx, spreadsheetId, "Sheet1!B"+srow+":I"+srow);
+
                     update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
                     UpdateValuesResponse result1 = update.Execute();
  
