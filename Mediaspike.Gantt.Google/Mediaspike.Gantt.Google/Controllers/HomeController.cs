@@ -44,6 +44,13 @@ namespace Mediaspike.Gantt.Google.Controllers
             return View();
         }
 
+        public ActionResult Approval()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

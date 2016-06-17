@@ -73,9 +73,9 @@ namespace Mediaspike.Gantt.Google.Controllers.Gantt
                         {
                             ID = Convert.ToInt32(row[0]),
                             End = DateTime.Parse(row[3].ToString()),
-                            Expanded = false,// Convert.ToBoolean(row[6]),
+                            Expanded = true,// Convert.ToBoolean(row[6]),
                             OrderID = 1,
-                            ParentID = null,// Convert.ToInt32(row[7]),
+                            ParentID =  Convert.ToInt32(row[7]),
                             PercentComplete = Convert.ToDecimal(row[4]) ,
                             Start = DateTime.Parse(row[2].ToString()),
                             Summary =Convert.ToBoolean(row[6]),

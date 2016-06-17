@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.607/styles/kendo.common-material.min.css" />
+<link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.607/styles/kendo.material.min.css" />
+<link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.2.607/styles/kendo.default.mobile.min.css" />
+
+<script src="//kendo.cdn.telerik.com/2016.2.607/js/jszip.min.js"></script>
+<script src="//kendo.cdn.telerik.com/2016.2.607/js/kendo.all.min.js"></script>
+
+<div class="box-col">
+    <h4>Get PDF</h4>
+    <button class="export-pdf k-button" onclick="getPDF('.pdf-page')">Export</button>
+    <button class="export-pdf k-button" onclick="preview()">Preview</button>
+</div>
+
+<script id="approval-template" type="text/x-kendo-template">
+    <div class="pdf-page size-a4">
+        <div class="row">
+            <div class="col-md-8"><h1> #= title # </h1></div>
+            <div class="col-md-4">
+                <div>Sponsor: </div>
+                <div>PM: Project Manager</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">What do we need from this forum</div>
+            <div class="col-md-8"> Loads of Cash please </div>
+        </div>
+        <table>
+            <tr>
+                <th>What we need from this forum</th>
+                <td>something</td>
+            </tr>
+            <tr>
+                <th>Project Summary. What business problem are we solving?</th>
+                <td> Summary </td>
+            </tr>
+            <tr>
+                <th>Proposed solution. How are we solving it?</th>
+                <td>something</td>
+            </tr>
+        </table>
+
+        <h2>How does this project make things...</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="jpg" height="50px" width="100px">
+                <h3>Better for our customer</h3>
+            </div>
+            <div class="col-md-4"> CustomerBenefits </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">Simpler for our People</div>
+            <div class="col-md-4"> CustomerBenefits </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">Beneficial for our Business</div>
+            <div class="col-md-4"> CustomerBenefits </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="danger">
+                    <th colspan="2">Baseline dates</th>
+                    <th colspan="3">Baseline Capex</th>
+                    <th colspan="3">Baseline Opex</th>
+                </tr>
+                <tr>
+                    <th>Start</th>
+                    <th>Completion</th>
+                    <th>Project Baseline</th>
+                    <th>Requested Now</th>
+                    <th>Budget</th>
+                    <th>Project Baseline</th>
+                    <th>Requested Now</th>
+                    <th>Budget</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> StartDate</td>
+                    <td> CompletionDate </td>
+                    <td> CapexProjectBaseLine </td>
+                    <td> CapexRequestedNow </td>
+                    <td> CapexBudget </td>
+                    <td> OpexProjectBaseLine </td>
+                    <td> OpexRequestedNow </td>
+                    <td> OpexBudget </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</script>
+
+<div id="product-preview" class="demo-section k-content">xxx</div>
+
+<script>
+
+    var template = kendo.template($("#approval-template").html());
+
+    function preview() {
+      
+        var product = {
+            "title": "Approved",
+            "status": "Approved",
+            "OpexBudget": 237,
+            "StartDate ": "\/Date(1320825600000-0800)\/"
+        };
+
+        var productPreviewHtml = template(product);
+
+        $("#product-preview").html(productPreviewHtml);
+    }
+
+
+</script>
